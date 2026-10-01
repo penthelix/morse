@@ -1,0 +1,61 @@
+@layer components {
+    .morse {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: clamp(0.5rem, 5vw, 1rem);
+
+        @media screen and (min-width: 900px) {
+            flex-direction: row;
+            gap: clamp(2rem, 5vw, 4rem);
+        }
+
+        input[type="text"],
+        .output {
+            padding: 1rem;
+            width: 14ch;
+            text-align: center;
+        }
+
+        input[type="text"] {
+            outline: none;
+            border: none;
+            border-radius: 0;
+            background-color: var(--clr-bg);
+            color: var(--clr-text);
+
+            font-family: var(--font-primary);
+            letter-spacing: 0.075ch;
+            opacity: 1;
+            font-weight: normal;
+
+            &::placeholder {
+                color: var(--clr-text);
+                opacity: 0.7;
+            }
+
+            &:focus::placeholder {
+                color: transparent;
+            }
+        }
+
+        @media screen and (min-width: 900px) {
+            input[type="text"] {
+                text-align: end;
+            }
+            .output {
+                text-align: start;
+            }
+        }
+
+        input[type="checkbox"] {
+            width: fit-content;
+            flex-grow: 0;
+
+            outline: none;
+            border: none;
+            border-radius: 0;
+        }
+    }
+}
