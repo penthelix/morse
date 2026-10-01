@@ -1,0 +1,34 @@
+/* Font imports */
+
+:root {
+    --font-primary:
+        "Clarity City", system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
+
+    --clr-black-1: #662b2a;
+    --clr-black-2: #2a663d;
+    --clr-white-1: #cce6d4;
+    --clr-white-2: #bb8c8b;
+
+    --clr-text: var(--clr-black-1);
+    --clr-text-secondary: var(--clr-black-2);
+    --clr-bg: var(--clr-white-1);
+    --clr-bg-secondary: var(--clr-white-2);
+
+    @media screen and (prefers-color-scheme: dark) {
+        --clr-text: var(--clr-white-1);
+        --clr-text-secondary: var(--clr-white-2);
+        --clr-bg: var(--clr-black-1);
+        --clr-bg-secondary: var(--clr-black-2);
+    }
+}
+
+::selection {
+    background-color: var(--clr-text);
+    color: var(--clr-bg);
+}
+
+/* Do not use !important inside layers */
+@layer reset, base, components, utils;
